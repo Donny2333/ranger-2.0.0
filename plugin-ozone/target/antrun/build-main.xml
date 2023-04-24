@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <echo file="/Users/Donny/DataFeature/Code/Tools/ranger-2.0.0/plugin-ozone/target/version" message="2.0.0"/>
+</target>
+</project>
