@@ -83,8 +83,8 @@ define(function(require) {
         template : require('hbs!tmpl/users/AddUserOrGroupsList_tmpl'),
 
         templateHelpers :function(){
-            var headerName = this.fieldName === 'users' ? "User Name" : this.fieldName === 'groups' ? "Group Name" : "Role Name",
-            btnLable = this.fieldName === 'users' ? 'Add Users' : this.fieldName === 'groups' ? "Add Group" : "Add Role";
+            var headerName = this.fieldName === 'users' ? "用户名" : this.fieldName === 'groups' ? "组名" : "角色名",
+            btnLable = this.fieldName === 'users' ? '新增用户' : this.fieldName === 'groups' ? "新增组" : "新增角色";
             return {
                 headerName : headerName,
                 btnLable : btnLable

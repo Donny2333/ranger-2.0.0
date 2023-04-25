@@ -260,7 +260,7 @@ define(function(require){
 					that.ui.addNewGroup.hide();
 					that.ui.addNewUser.show();
 				}
-				that.$('.wrap-header').text('User List');
+				that.$('.wrap-header').text('用户列表');
 				that.checkRoleKeyAdmin();
 			});
 		},
@@ -291,7 +291,7 @@ define(function(require){
 				}
 				that.ui.addNewUser.hide();
 				that.ui.addNewGroup.show();
-				that.$('.wrap-header').text('Group List');
+				that.$('.wrap-header').text('组列表');
 				that.$('ul').find('[data-js="groups"]').addClass('active');
 				that.$('ul').find('[data-js="users"]').removeClass();
 				that.checkRoleKeyAdmin();
@@ -323,7 +323,7 @@ define(function(require){
                                 that.ui.addNewUser.hide();
                                 that.ui.addNewGroup.hide();
                                 that.ui.addNewRoles.show();
-                                that.$('.wrap-header').text('Role List');
+                                that.$('.wrap-header').text('角色列表');
                                 that.$('ul').find('[data-js="roles"]').addClass('active');
                                 that.$('ul').find('[data-js="users"]').removeClass();
                                 that.$('ul').find('[data-js="groups"]').removeClass();
@@ -348,7 +348,7 @@ define(function(require){
 				gridOpts : {
 					row: tableRow,
 					header : XABackgrid,
-					emptyText : 'No Users found!'
+					emptyText : '暂无数据'
 				}
 			}));	
 
@@ -481,7 +481,7 @@ define(function(require){
 				gridOpts : {
 					row: tableRow,
 					header : XABackgrid,
-					emptyText : 'No Groups found!'
+					emptyText : '暂无数据'
 				}
 			}));	
 
@@ -550,7 +550,7 @@ define(function(require){
 					sortable:false
                 },
                 member	:{
-                    label : "Users",
+                    label : "用户",
                     click : false,
                     cell  : Backgrid.HtmlCell.extend({className: 'cellWidth-1'}),
                     drag  : false,
@@ -589,7 +589,7 @@ define(function(require){
                                 gridOpts : {
                                         row: tableRow,
                                         header : XABackgrid,
-                                        emptyText : 'No Groups found!'
+                                        emptyText : '暂无数据'
                                 }
                         }));
                 },
@@ -686,7 +686,7 @@ define(function(require){
             }).then(function(){
                 XAUtil.blockUI('unblock');
                 totalRecords = this.state.totalRecords;
-                var title =  "<h4>User's List: " + _.escape(name) + "</h4>";
+                var title =  "<h4>用户列表: " + _.escape(name) + "</h4>";
                     _.each(that.grpUserList.models , function(model){
                         msg +='<span class="link-tag userLists span-margin setEllipsis" title="'+ _.escape(model.get('name')) +'"><a href="#!/user/'+ model.id+'">'+ _.escape(model.get('name')) + '</a></span>';
                         that.copyUserLists.push(model.get('name'));
@@ -769,7 +769,7 @@ define(function(require){
                 }
                 modal.$el.find(".usernames").empty();
                 if(_.isEmpty(users)){
-                    users = "No users found.";
+                    users = "暂无数据.";
                     modal.$el.find('.copyUsers').hide()
                 }
                 modal.$el.find(".usernames").append(users);
@@ -939,7 +939,7 @@ define(function(require){
                         this.roleList.selected  = {};
                         XAUtil.blockUI('unblock');
                         if(notDeletedRoleName === "" && _.isEmpty(errorMsgForNotDeletedRoles)){
-                                XAUtil.notifySuccess('Success','Role deleted successfully!');
+                                XAUtil.notifySuccess('Success','角色名 deleted successfully!');
                         } else {
                             var msg = "";
                             if(!_.isEmpty(notDeletedRoleName)){
@@ -956,31 +956,31 @@ define(function(require){
 			if(this.showUsers){
 				placeholder = localization.tt('h.searchForYourUser');	
 				coll = this.collection;
-				searchOpt = ['User Name','Email Address','Visibility', 'Role','User Source','User Status'];//,'Start Date','End Date','Today'];
+				searchOpt = ['用户名','电子邮箱','可见性', '角色名','用户来源','用户状态'];//,'Start Date','End Date','Today'];
 				var userRoleList = _.map(XAEnums.UserRoles,function(obj,key){return {label:obj.label,value:key};});
-				serverAttrName  = [	{text : "User Name", label :"name"},
-									{text : "Email Address", label :"emailAddress"},
-				                   {text : "Role", label :"userRole", 'multiple' : true, 'optionsArr' : userRoleList},
-				                   	{text : "Visibility", label :"isVisible", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.VisibilityStatus)},
-				                   {text : "User Source", label :"userSource", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.UserTypes)},
-				                   {text : "User Status", label :"status", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.ActiveStatus)},
+				serverAttrName  = [	{text : "用户名", label :"name"},
+									{text : "电子邮箱", label :"emailAddress"},
+				                   {text : "角色名", label :"userRole", 'multiple' : true, 'optionsArr' : userRoleList},
+				                   	{text : "可见性", label :"isVisible", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.VisibilityStatus)},
+				                   {text : "用户来源", label :"userSource", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.UserTypes)},
+				                   {text : "用户状态", label :"status", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.ActiveStatus)},
 								];
             } else if(this.showGroups){
 				placeholder = localization.tt('h.searchForYourGroup');
 				coll = this.groupList;
-				searchOpt = ['Group Name','Group Source', 'Visibility'];//,'Start Date','End Date','Today'];
-				serverAttrName  = [{text : "Group Name", label :"name"},
-				                   {text : "Visibility", label :"isVisible", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.VisibilityStatus)},
-				                   {text : "Group Source", label :"groupSource", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.GroupTypes)},];
+				searchOpt = ['组名','组来源', '可见性'];//,'Start Date','End Date','Today'];
+				serverAttrName  = [{text : "组名", label :"name"},
+				                   {text : "可见性", label :"isVisible", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.VisibilityStatus)},
+				                   {text : "组来源", label :"groupSource", 'multiple' : true, 'optionsArr' : XAUtil.enumToSelectLabelValuePairs(XAEnums.GroupTypes)},];
 
             } else{
                 placeholder = localization.tt('h.searchForYourRole');
                 coll = this.roleList;
-                searchOpt = ['Role Name','User Name', 'Group Name', /*Role ID*/];//,'Start Date','End Date','Today'];
-                serverAttrName  = [{text : "Role Name", label :"roleName"},
-                                   {text : "User Name", label :"userName"},
-                                   {text : "Group Name", label :"groupName"},
-                                   // {text : "Role ID", label : "roleId"}
+                searchOpt = ['角色名','用户名', '组名', /*角色名 ID*/];//,'Start Date','End Date','Today'];
+                serverAttrName  = [{text : "角色名", label :"roleName"},
+                                   {text : "用户名", label :"userName"},
+                                   {text : "组名", label :"groupName"},
+                                   // {text : "角色名 ID", label : "roleId"}
                                   ];
 			}
 			var query = (!_.isUndefined(coll.VSQuery)) ? coll.VSQuery : '';
@@ -991,7 +991,7 @@ define(function(require){
 				      callbacks :  { 
 				    	  valueMatches :function(facet, searchTerm, callback) {
 								switch (facet) {
-									case 'Role':
+									case '角色名':
                                         var userRoles ={};
                                         _.map(XAUtil.getUserDataParams().userRoleList, function(obj){
                                                 userRoles[obj] = XAEnums.UserRoles[obj];
@@ -999,16 +999,16 @@ define(function(require){
                                         var roles = XAUtil.hackForVSLabelValuePairs(userRoles);
                                         callback(roles);
 										break;
-									case 'User Source':
+									case '用户来源':
 										callback(XAUtil.hackForVSLabelValuePairs(XAEnums.UserTypes));
 										break;	
-									case 'Group Source':
+									case '组来源':
 										callback(XAUtil.hackForVSLabelValuePairs(XAEnums.GroupTypes));
 										break;		
-									case 'Visibility':
+									case '可见性':
 										callback(XAUtil.hackForVSLabelValuePairs(XAEnums.VisibilityStatus));
 										break;
-									case 'User Status':
+									case '用户状态':
 //										callback(XAUtil.hackForVSLabelValuePairs(XAEnums.ActiveStatus));
 										callback(that.getActiveStatusNVList());
 										break;

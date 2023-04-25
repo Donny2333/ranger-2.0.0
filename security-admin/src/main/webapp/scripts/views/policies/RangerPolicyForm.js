@@ -178,7 +178,7 @@ define(function(require){
                 var modal = new Backbone.BootstrapModal({
                   content	: view,
                   title	: 'Policy Validity Period',
-                  okText  :"Save",
+                  okText  :"保存",
                   animate : true,focusOk:false,
                   escape:false,
                   // allowCancel:false,
@@ -217,7 +217,7 @@ define(function(require){
                 var modal = new Backbone.BootstrapModal({
                   content   : view,
                     title : 'Policy Conditions',
-                    okText  :"Save",
+                    okText  :"保存",
                     animate : true,
                     focusOk:false,
                     escape:false,

@@ -9,3 +9,4 @@ target
 winpkg/target
 .DS_Store
 .idea
+node_modules

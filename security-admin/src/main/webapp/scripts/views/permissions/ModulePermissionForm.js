@@ -95,13 +95,13 @@ define(function(require) {
 				},
 				selectGroups : {
 					type : 'Select2Remote',
-					editorAttrs  : {'placeholder' :'Select Group','tokenSeparators': [",", " "],multiple:true},
+					editorAttrs  : {'placeholder' :'选择组','tokenSeparators': [",", " "],multiple:true},
                                         pluginAttr: this.getPlugginAttr(true,{'lookupURL':"service/xusers/groups",'idKey':'groupId','textKey':'groupName'}),
 					title : localization.tt('lbl.selectGroup')+' *'
 				},
 				selectUsers : {
 					type : 'Select2Remote',
-					editorAttrs  : {'placeholder' :'Select User','tokenSeparators': [",", " "],multiple:true},
+					editorAttrs  : {'placeholder' :'选择用户','tokenSeparators': [",", " "],multiple:true},
                                         pluginAttr: this.getPlugginAttr(true,{'lookupURL':"service/xusers/users",'idKey':'userId','textKey':'userName'}),
 					title : localization.tt('lbl.selectUser')+' *',
 				},
@@ -202,7 +202,7 @@ define(function(require) {
 						return result.text;
 					},
 					formatNoMatches : function(term){
-						return options.textKey == 'groupName' ?  'No group found.' : 'No user found.'; 
+						return options.textKey == 'groupName' ?  '没有查询到组' : '没有查询到用户'; 
 					}
 				};
 			}

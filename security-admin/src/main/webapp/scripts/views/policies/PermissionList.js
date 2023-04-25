@@ -263,7 +263,7 @@ define(function(require) {
 					return result.text;
 				},
 				formatNoMatches: function(result){
-                                        return (type == 'users') ? 'No user found.' : ((type == 'groups') ? 'No group found.' : 'No role found');
+                                        return (type == 'users') ? '没有查询到用户' : ((type == 'groups') ? '没有查询到组' : '没有查询到角色');
 				}
 			}).on('select2-focus', XAUtil.select2Focus);
 		},

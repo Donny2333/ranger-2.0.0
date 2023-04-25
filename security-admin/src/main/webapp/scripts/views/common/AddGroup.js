@@ -84,7 +84,7 @@ define(function(require){
 			}
 			this.$('.tags').editable({
 			    placement: 'right',
-			    emptytext : 'Please select',
+			    emptytext : '请选择',
 				select2 :this.getSelect2Options(),
 			    display: function(values,srcDate) {
 			    	if(_.isNull(values) ){
@@ -138,7 +138,7 @@ define(function(require){
     		var tags = _.map(that.model.get('groupIdList'),function(id,i){ return {'id': id, 'text': _.escape(that.model.get('groupNameList')[i]) };});
 			return{
 				closeOnSelect : true,
-				placeholder : 'Select Group',
+				placeholder : '选择组',
 			//	maximumSelectionSize : 1,
 				width :'220px',
 				tokenSeparators: [",", " "],
@@ -186,7 +186,7 @@ define(function(require){
 					return result.text;
 				},
 				formatNoMatches: function(result){
-					return groupCnt > 0 ? 'Please enter one more character.' : 'No group found.';  
+					return groupCnt > 0 ? '请输入' : '没有查询到组';  
 				}
 			};
 		},

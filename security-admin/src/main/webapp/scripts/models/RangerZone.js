@@ -150,7 +150,7 @@ define(function(require) {
             getPluginAttr: function(typeGroup, $select) {
                 var that = this,
                     tags = [],
-                    placeholder = (typeGroup) ? 'Select Group' : 'Select User',
+                    placeholder = (typeGroup) ? '选择组' : '选择用户',
                     searchUrl = (typeGroup) ? "service/xusers/lookup/groups" : "service/xusers/lookup/users";
                 _.each(this.get($select), function(name) {
                     tags.push({
@@ -224,7 +224,7 @@ define(function(require) {
                         return result.text;
                     },
                     formatNoMatches: function(result) {
-                        return typeGroup ? 'No group found.' : 'No user found.';
+                        return typeGroup ? '没有查询到组' : '没有查询到用户';
                     }
 
                 }

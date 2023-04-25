@@ -72,7 +72,7 @@ define(function(require){
                 },
                 description: {
                     type: 'TextArea',
-                    title: 'Description',
+                    title: '描述',
                     validators: []
                 },
             });

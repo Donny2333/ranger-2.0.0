@@ -855,7 +855,7 @@ define(function(require) {
 				gridOpts : {
 					row : TableRow,
 					header : XABackgrid,
-					emptyText : 'No service found!!'
+					emptyText : '暂无数据!'
 				}
 			}));	
 		},
@@ -1103,7 +1103,7 @@ define(function(require) {
 				gridOpts : {
 					row: TableRow,
 					header : XABackgrid,
-					emptyText : 'No Access Audit found!'
+					emptyText : '暂无数据'
 				}
 			}));
 		
@@ -1331,7 +1331,7 @@ define(function(require) {
 				gridOpts : {
 					row :Backgrid.Row.extend({}),
 					header : XABackgrid,
-					emptyText : 'No login session found!!'
+					emptyText : '暂无数据!'
 				}
 			}));	
 		},
@@ -1453,7 +1453,7 @@ define(function(require) {
 				gridOpts : {
 					row : 	Backgrid.Row.extend({}),
 					header : XABackgrid,
-					emptyText : 'No plugin found!'
+					emptyText : '暂无数据'
 				}
 			}));	
 		},
@@ -1550,7 +1550,7 @@ define(function(require) {
                                 gridOpts : {
                                         row : 	Backgrid.Row.extend({}),
                                         header : XABackgrid,
-                                                emptyText : 'No plugin status found!'
+                                                emptyText : '暂无数据'
                                 }
                         }));
             XAUtils.backgirdSort(this.pluginInfoList);
@@ -1772,7 +1772,7 @@ define(function(require) {
                 gridOpts : {
                     row : Backgrid.Row.extend({}),
                     header : XABackgrid,
-                    emptyText : 'No user sync audit found!'
+                    emptyText : '暂无数据'
                 }
             }));
         },

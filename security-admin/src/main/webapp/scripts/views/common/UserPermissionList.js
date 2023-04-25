@@ -189,7 +189,7 @@ define(function(require) {
 			});
 			this.ui.selectUsers.select2({
 				closeOnSelect : true,
-				placeholder : 'Select User',
+				placeholder : '选择用户',
 		//		maximumSelectionSize : 1,
 				width :'220px',
 				tokenSeparators: [",", " "],
@@ -231,7 +231,7 @@ define(function(require) {
 					return result.text;
 				},
 				formatNoMatches: function(result){
-					return 'No user found.';
+					return '没有查询到用户';
 				}
 				
 			}).on('select2-focus', XAUtil.select2Focus);

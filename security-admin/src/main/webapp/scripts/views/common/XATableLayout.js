@@ -53,7 +53,7 @@ define(function(require){
 
 		gridOpts : {
 			className: 'table table-bordered table-condensed backgrid',
-			emptyText : 'No Records found!'
+			emptyText : '暂无数据'
 		},
 
 		filterOpts : {
@@ -93,7 +93,7 @@ define(function(require){
 			 * 	className: 'table table-bordered table-condensed backgrid',
 			 *  row: TableRow,
 			 *  header : XABackgrid,
-			 *  emptyText : 'No Records found!',
+			 *  emptyText : '暂无数据',
 			 * }
 			 * filterOpts : {
 			 *	name: ['name'],

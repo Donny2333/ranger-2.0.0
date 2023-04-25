@@ -181,7 +181,7 @@ define(function(require){
 				gridOpts : {
 					row: Backgrid.Row.extend({}),
 					header : XABackgrid,
-					emptyText : 'No Policies found!' + (this.rangerService.get('isEnabled') ? '' : ' The service is disabled!')
+					emptyText : '暂无数据' + (this.rangerService.get('isEnabled') ? '' : ' The service is disabled!')
 				},
 			}));
 		},
@@ -444,12 +444,12 @@ define(function(require){
                         });
 			var PolicyStatusValue = _.map(XAEnums.ActiveStatus, function(status) { return { 'label': status.label, 'value': Boolean(status.value)}; });
 	
-                        var searchOpt = ['Policy Name','Group Name','User Name','Status', 'Policy Label'];//,'Start Date','End Date','Today'];
+                        var searchOpt = ['Policy Name','组名','用户名','Status', 'Policy Label'];//,'Start Date','End Date','Today'];
                         searchOpt = _.union(searchOpt, _.map(resourceSearchOpt, function(opt){ return opt.label }))
-                        var serverAttrName  = [{text : "Group Name",  label :"group",   info:localization.tt('h.groupNameMsg')},
+                        var serverAttrName  = [{text : "组名",  label :"group",   info:localization.tt('h.groupNameMsg')},
                                                {text : "Policy Name", label :"policyNamePartial",  info :localization.tt('msg.policyNameMsg')},
                                                {text : "Status",      info : localization.tt('msg.statusMsg') ,  label :"isEnabled",'multiple' : true, 'optionsArr' : PolicyStatusValue},
-                                               {text : "User Name",   label :"user" ,  info :localization.tt('h.userMsg')},
+                                               {text : "用户名",   label :"user" ,  info :localization.tt('h.userMsg')},
                                                {text : "Policy Label",   label :"policyLabelsPartial" ,  info :localization.tt('h.policyLabelsinfo')},
                                                ];
 			                     // {text : 'Start Date',label :'startDate'},{text : 'End Date',label :'endDate'},

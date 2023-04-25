@@ -112,7 +112,7 @@ define(function(require){
 				includeFilter : false,
 				gridOpts : {
 					row: Backgrid.Row.extend({}),
-					emptyText : 'No permissions found!'
+					emptyText : '暂无数据'
 				},
 			}));
 		},
@@ -221,8 +221,8 @@ define(function(require){
 		},
 		addVisualSearch : function(){
 			var that = this;
-			var searchOpt = ['Module Name','Group Name','User Name'];
-			var serverAttrName  = [{text : "Module Name", label :"module"},{text : "Group Name", label :"groupName"},{text : "User Name", label :"userName"}];
+			var searchOpt = ['Module Name','组名','用户名'];
+			var serverAttrName  = [{text : "Module Name", label :"module"},{text : "组名", label :"groupName"},{text : "用户名", label :"userName"}];
 			var pluginAttr = {
 				      placeholder :localization.tt('h.searchForPermissions'),
 				      container : this.ui.visualSearch,

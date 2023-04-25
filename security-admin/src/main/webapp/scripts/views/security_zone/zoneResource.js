@@ -171,7 +171,7 @@ define(function(require) {
                 animate: true,
                 content: this.form,
                 title: 'Add/Edit Resources',
-                okText: 'Save',
+                okText: '保存',
                 allowCancel: true,
                 escape: true
             }).open();

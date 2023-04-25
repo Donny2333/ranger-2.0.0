@@ -159,7 +159,7 @@ define(function(require){
 				includeFilter : false,
 				gridOpts : {
 					row: Backgrid.Row.extend({}),
-					emptyText : 'No Key found!'
+					emptyText : '暂无数据'
 				}
 			}));	
 		},

@@ -1021,7 +1021,7 @@ define(function(require) {
 	XAUtils.highlightDisabledPolicy = function(that) {
 		var $el = that.rTableList.$el;
 		var timerId = setInterval(function() {
-			if ($el.find('tr td:last').text() != "No Policies found!") {
+			if ($el.find('tr td:last').text() != "暂无数据") {
 				_.each($el.find('tr td').find('.label-important'), function(a,
 						b) {
 					if ($(a).html() == "Disabled")
@@ -1609,7 +1609,7 @@ define(function(require) {
     XAUtils.getUsersGroupsList = function($select, domElement){
         var that = domElement,
             tags = [],
-            placeholder = $select === 'users' ? "Select User" : $select === 'groups' ? "Select Group" : "Select Role",
+            placeholder = $select === 'users' ? "选择用户" : $select === 'groups' ? "选择组" : "选择角色",
             searchUrl = $select === 'users' ? "service/xusers/lookup/users" : $select === 'groups' ? "service/xusers/lookup/groups"
                 : "service/roles/roles";
             // if(that.model && !_.isEmpty(that.model.get('name'))){
@@ -1701,7 +1701,7 @@ define(function(require) {
                 return result.text;
             },
             formatNoMatches: function(result) {
-                return $select === 'users' ? "No user found." : $select === 'groups' ? "No group found." : "No role found.";
+                return $select === 'users' ? "没有查询到用户" : $select === 'groups' ? "没有查询到组" : "没有查询到角色.";
             }
 
         }
