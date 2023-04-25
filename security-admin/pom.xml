@@ -618,7 +618,8 @@
 								WEB-INF/lib/spring-*.RC3.jar,
 								WEB-INF/lib/spring-2.*.jar,
 								WEB-INF/lib/jetty-*.jar,
-								WEB-INF/lib/commons-compress-*.jar
+								WEB-INF/lib/commons-compress-*.jar,
+                                **/node_modules/**
 							</packagingExcludes>
                             <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
                         </configuration>
